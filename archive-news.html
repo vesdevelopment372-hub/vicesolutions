@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>News Archive | Vic E Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#020617;
+    color:#cbd5f5;
+    font-family:'Rajdhani', sans-serif;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.page-title{
+    text-align:center;
+    font-size:32px;
+    color:#34d399;
+    margin-bottom:30px;
+    font-family:'Orbitron', sans-serif;
+}
+
+/* Search Controls */
+
+.controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+.controls input,
+.controls select{
+    padding:10px 15px;
+    border-radius:8px;
+    border:1px solid rgba(52,211,153,0.3);
+    background:#020c1b;
+    color:white;
+}
+
+/* Date */
+
+.archive-date{
+    font-size:22px;
+    color:#34d399;
+    margin-bottom:20px;
+    border-left:4px solid #34d399;
+    padding-left:12px;
+    font-family:'Orbitron', sans-serif;
+}
+
+/* Cards */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin-bottom:50px;
+}
+
+.news-card{
+    background:#020c1b;
+    border:1px solid rgba(52,211,153,0.2);
+    border-radius:14px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.news-card:hover{
+    transform:translateY(-5px);
+    border-color:#34d399;
+}
+
+.news-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:18px;
+}
+
+.news-category{
+    font-size:12px;
+    color:#34d399;
+    margin-bottom:8px;
+}
+
+.news-title{
+    font-size:18px;
+    color:white;
+    margin-bottom:10px;
+}
+
+.news-desc{
+    font-size:14px;
+    color:#94a3b8;
+    margin-bottom:15px;
+}
+
+.read-btn{
+    color:#34d399;
+    text-decoration:none;
+}
+
+.read-btn:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="page-title">News Archive</h1>
+
+
+<!-- ================= CONTROLS ================= -->
+
+<div class="controls">
+
+<input type="text" id="searchDate" placeholder="Search by date (e.g. 18 February 2026)">
+
+<select id="categoryFilter">
+<option value="">All Categories</option>
+<option value="CYBERSECURITY BREACH">Cybersecurity Breach</option>
+<option value="DEFENCE TECH">Defence Tech</option>
+<option value="CYBER THREAT">Cyber Threat</option>
+<option value="MALWARE ALERT">Malware Alert</option>
+<option value="SECURITY UPDATE">Security Update</option>
+<option value="AI SECURITY">AI Security</option>
+</select>
+
+</div>
+
+
+<!-- ================= DATE SECTION ================= -->
+
+<!-- ================= 28 feb ================= -->
+ <!-- This from comment everything, and we are uncomment them everyday. 
+<div class="archive-section" data-date="28 February 2026">
+
+<div class="archive-date">28 February 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/281feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">LINUX RELEASE</div>
+<div class="news-title">Supply chain attacks top 2026 cyber threats.</div>
+<div class="news-desc">Global cybersecurity outlook highlights supply chain risks as primary danger vector.
+</div>
+<a href="https://itsfoss.com/news/fedora-pocketblue-remix-overview/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/282feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">SOFTWARE ECONOMICS</div>
+<div class="news-title">Open source contributions yield high ROI.</div>
+<div class="news-desc">Study shows strategic OSS participation drives developer productivity and business value.</div>
+<a href="https://thenewstack.io/roi-open-source-contribution/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/283feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">cybersecurity policy</div>
+<div class="news-title">CISA sets urgent federal patch deadline.</div>
+<div class="news-desc">Agencies must fix critical exploited vulnerability by Friday or face risk.</div>
+<a href="https://federalnewsnetwork.com/cybersecurity/2026/02/cisa-gives-agencies-until-friday-to-patch-critical-cyber-bug/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+-->
+
+<!-- ================= 27 feb ================= 
+ <div class="archive-section" data-date="27 February 2026">
+
+<div class="archive-date">27 February 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/271feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">LINUX RELEASE</div>
+<div class="news-title">Fedora PocketBlue targets mobile Linux.</div>
+<div class="news-desc">New Fedora remix optimized for smartphones with touch-friendly interface and portability.
+</div>
+<a href="https://itsfoss.com/news/fedora-pocketblue-remix-overview/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/272feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">SOFTWARE ECONOMICS</div>
+<div class="news-title">Open source contributions yield high ROI.</div>
+<div class="news-desc">Study shows strategic OSS participation drives developer productivity and business value.</div>
+<a href="https://thenewstack.io/roi-open-source-contribution/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/273feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">cybersecurity policy</div>
+<div class="news-title">CISA sets urgent federal patch deadline.</div>
+<div class="news-desc">Agencies must fix critical exploited vulnerability by Friday or face risk.</div>
+<a href="https://federalnewsnetwork.com/cybersecurity/2026/02/cisa-gives-agencies-until-friday-to-patch-critical-cyber-bug/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+-->
+
+<!-- ================= 26 feb ================= --
+ <div class="archive-section" data-date="26 February 2026">
+
+<div class="archive-date">26 February 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/261feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY TOOL</div>
+<div class="news-title">Kali Linux integrates Claude AI.</div>
+<div class="news-desc">Offensive security distro adds Claude for automated recon and exploit guidance.
+</div>
+<a href="https://cybersecuritynews.com/kali-linux-integrates-claude-ai/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/262feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY TOOLS</div>
+<div class="news-title">SuperClaw streamlines red-team ops.</div>
+<div class="news-desc">Open-source AI agent orchestrates attacks and automates engagement tasks.</div>
+<a href="https://cybersecuritynews.com/superclaw-red-team-ai-agent/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/263feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">ROBOTICS INNOVATION</div>
+<div class="news-title">Chinese robot endures extreme ice marathon.</div>
+<div class="news-desc">Humanoid walked 130,000+ steps at −47.4°C, proving cold-resistant robotics advancement.</div>
+<a href="https://www.ecoticias.com/en/a-chinese-humanoid-robot-has-just-made-history-at-47-4-c-taking-more-than-130000-steps-on-the-ice-in-xinjiang-and-even-drawing-an-olympic-emblem/28330/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+-->
+
+<!-- ================= 25 feb ================= --
+ <div class="archive-section" data-date="25 February 2026">
+
+<div class="archive-date">25 February 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/251feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY THREAT</div>
+<div class="news-title">VMware Aria RCE vulnerabilities under attack.</div>
+<div class="news-desc">Critical RCE flaws in VMware Aria now actively exploited by threat actors.
+</div>
+<a href="https://cybersecuritynews.com/vmware-aria-vulnerabilities-rce-attack/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/252feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">BLOCKCHAIN SECURITY</div>
+<div class="news-title">Bitcoin begins quantum-resistant upgrade.</div>
+<div class="news-desc">BIP-360 merged to reduce cryptographic exposure against future quantum threats.</div>
+<a href="https://www.forbes.com/sites/digital-assets/2026/02/23/bitcoin-took-its-first-step-against-quantum-computers/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/253feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">SCIENCE INNOVATION</div>
+<div class="news-title">Memory crystals could slash data emissions.</div>
+<div class="news-desc">Ultra-durable 5D storage promises long-life data retention with minimal energy use.</div>
+<a href="https://www.bbc.com/future/article/20260223-the-everlasting-memory-crystals-that-could-slash-data-centre-emissions" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+-->
+
+
+<!-- ================= 24 feb ================= --
+ <div class="archive-section" data-date="24 February 2026">
+
+<div class="archive-date">24 February 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/241feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">TECH DISCUSSION</div>
+<div class="news-title">Windows vs Linux debate distractions productivity.</div>
+<div class="news-desc">Article argues OS arguments distract from meaningful workflow improvements.
+</div>
+<a href="https://www.howtogeek.com/the-windows-vs-linux-debate-is-a-waste-of-time/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/242feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY AI</div>
+<div class="news-title">Anthropic’s Claude finds 500+ hidden bugs.</div>
+<div class="news-desc">AI code security tool reasons beyond rules to detect long-undiscovered vulnerabilities.</div>
+<a href="https://venturebeat.com/security/anthropic-claude-code-security-reasoning-vulnerability-hunting" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/243feb.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY BREACH</div>
+<div class="news-title">AI-assisted hacker breached 600 firewalls.</div>
+<div class="news-desc">Attacker used AI tools to compromise FortiGate devices within five weeks.</div>
+<a href="https://www.bleepingcomputer.com/news/security/amazon-ai-assisted-hacker-breached-600-fortigate-firewalls-in-5-weeks/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+-->
+
+<!-- ================= 20 mar ================= -->
+ <div class="archive-section" data-date="20 March 2026">
+
+<div class="archive-date">20 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/201mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME RANSOMWARE</div>
+<div class="news-title">Ransomware breach exposed 672,000 people.</div>
+<div class="news-desc">Attack on Marquis stole sensitive data and disrupted dozens of US banks.
+</div>
+<a href="https://www.bleepingcomputer.com/news/security/marquis-ransomware-gang-stole-data-of-672-000-people-in-2025-cyberattack/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/202mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERWARFARE ATTACK</div>
+<div class="news-title">APT28 exploits Zimbra in Ukraine.</div>
+<div class="news-desc">Russian military hackers used flaw to target Ukrainian government systems.</div>
+<a href="https://www.bleepingcomputer.com/news/security/russian-apt28-military-hackers-exploit-zimbra-flaw-in-ukrainian-govt-attacks/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/203mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">GEOPOLITICS ECONOMICS</div>
+<div class="news-title">Middle East conflict impacts global IT spending.</div>
+<div class="news-desc">IDC warns geopolitical tensions will slow enterprise technology investments worldwide.</div>
+<a href="https://www.computerworld.com/article/4147147/middle-east-conflict-set-to-hit-global-it-spending-idc-warns.html" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= 19 feb ================= -->
+ <div class="archive-section" data-date="19 March 2026">
+
+<div class="archive-date">19 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/191mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY RANSOMWARE</div>
+<div class="news-title">Cisco firewall zero-day exploited by ransomware.</div>
+<div class="news-desc">Interlock group abused vulnerability to breach networks and deploy ransomware payloads.
+</div>
+<a href="https://www.securityweek.com/cisco-firewall-vulnerability-exploited-as-zero-day-in-interlock-ransomware-attacks/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/192mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME PHISHING</div>
+<div class="news-title">OpenClaw developers targeted in phishing.</div>
+<div class="news-desc">Attackers used GitHub phishing to steal credentials from project contributors.</div>
+<a href="https://decrypt.co/361646/openclaw-developers-lured-github-phishing-campaign" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/193mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY TREND</div>
+<div class="news-title">API attacks surge across industries globally.</div>
+<div class="news-desc">Akamai report shows sharp rise in API abuse targeting multiple sectors.</div>
+<a href="https://www.helpnetsecurity.com/2026/03/19/akamai-api-attack-trends-report/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= 18 march ================= -->
+ <div class="archive-section" data-date="18 March 2026">
+
+<div class="archive-date">18 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/181mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME TREND</div>
+<div class="news-title">Government cyberattacks surge globally in 2026.</div>
+<div class="news-desc">Report shows sharp rise in targeted campaigns against government agencies worldwide.
+</div>
+<a href="https://www.helpnetsecurity.com/2026/03/18/government-agencies-cyberattack-campaigns-volume/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>
+    Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="AI Security">
+<img src="imagess/archive_image/182mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY VULNERABILITY</div>
+<div class="news-title">Ubuntu flaw enables privilege escalation.</div>
+<div class="news-desc">CVE-2026-3888 lets attackers gain elevated access on vulnerable systems.</div>
+<a href="https://thehackernews.com/2026/03/ubuntu-cve-2026-3888-bug-lets-attackers.html" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/183mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY THREAT</div>
+<div class="news-title">Zombie ZIP bypasses antivirus detection.</div>
+<div class="news-desc">New archive technique evades scanners, enabling hidden malware delivery.</div>
+<a href="https://www.techspot.com/news/111680-new-zombie-zip-attack-can-evade-most-antivirus.html" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- ================= 17 mar ================= -->
+ <div class="archive-section" data-date="17 March 2026">
+
+<div class="archive-date">17 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBERSECURITY BREACH">
+<img src="imagess/archive_image/171mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME TREND</div>
+<div class="news-title">India second most targeted by scams.</div>
+<div class="news-desc">Meta report ranks India among top nations facing rising global cyber scam activity.</div>
+<a href="https://the420.in/india-second-most-targeted-country-global-cyberscams-meta-report/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="DEFENCE TECH">
+<img src="imagess/archive_image/172mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY THREAT</div>
+<div class="news-title">Malicious Chrome extension disabled by Google.</div>
+<div class="news-desc">Popular extension removed after malware found stealing user data.</div>
+<a href="https://in.mashable.com/tech/107183/popular-chrome-extension-disabled-for-containing-malware" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/173mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">GEOPOLITICS CYBER</div>
+<div class="news-title">China warns US over cyber accusations.</div>
+<div class="news-desc">Beijing rejects hacking claims, urges cooperation instead of confrontation.</div>
+<a href="https://www.globaltimes.cn/page/202603/1357039.shtml" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- ================= 16 March ================= -->
+
+<div class="archive-section" data-date="16 March 2026">
+
+<div class="archive-date">16 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBERSECURITY BREACH">
+<img src="imagess/archive_image/161mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME MALWARE</div>
+<div class="news-title">Malware discovered inside Steam games.</div>
+<div class="news-desc">FBI probes malicious software hidden in Steam-hosted games targeting unsuspecting players.</div>
+<a href="https://timesofindia.indiatimes.com/technology/tech-news/fbi-is-investigating-malware-hidden-inside-games-hosted-on-steam-names-of-the-suspected-games-timeline-of-attack-and-tips-for-gamers-to-protect-themselves/articleshow/129564457.cms" class="read-btn"
+target="_blank"
+rel="noopener noreferrer">Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="DEFENCE TECH">
+<img src="imagess/archive_image/162mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERSECURITY PATCH</div>
+<div class="news-title">Microsoft fixes RRAS remote code flaw.</div>
+<div class="news-desc">Windows 11 OOB hotpatch addresses critical RRAS vulnerability enabling remote code execution.</div>
+<a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-11-oob-hotpatch-to-fix-rras-rce-flaw/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer">Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/163mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">AI INDUSTRY</div>
+<div class="news-title">Red Hat partners with Nvidia for AI.</div>
+<div class="news-desc">Collaboration focuses on open-source infrastructure powering large-scale AI factories.</div>
+<a href="https://x.com/RedHat/status/2032537452821320011" class="read-btn"
+target="_blank"
+rel="noopener noreferrer">Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- ================= 15 March ================= -->
+
+<div class="archive-section" data-date="18 February 2026">
+
+<div class="archive-date">15 March 2026</div>
+
+<div class="news-grid">
+
+<div class="news-card" data-category="CYBERSECURITY BREACH">
+<img src="imagess/archive_image/151mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBERCRIME PREVENTION</div>
+<div class="news-title">India stops ₹8,600-crore cyber fraud.</div>
+<div class="news-desc">MHA reports large-scale prevention using cybercrime monitoring and financial blocking</div>
+<a href="https://the420.in/india-prevents-8600-crore-cyber-fraud-cases-mha/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer">Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="DEFENCE TECH">
+<img src="imagess/archive_image/152mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">QUANTUM RESEARCH</div>
+<div class="news-title">Quantum teleportation advances future internet.</div>
+<div class="news-desc">Researchers achieve reliable quantum state transfer, enabling progress toward quantum communication networks.</div>
+<a href="https://scitechdaily.com/quantum-teleportation-breakthrough-brings-the-quantum-internet-closer/" class="read-btn"
+target="_blank"
+rel="noopener noreferrer">Read More →</a>
+</div>
+</div>
+
+<div class="news-card" data-category="CYBER THREAT">
+<img src="imagess/archive_image/153mar.webp" class="news-img">
+<div class="news-content">
+<div class="news-category">CYBER THREAT</div>
+<div class="news-title">Invisible Unicode hides malicious code.</div>
+<div class="news-desc">Attackers used hidden Unicode characters in GitHub and VS Code packages.</div>
+<a href="https://www.tomshardware.com/tech-industry/cyber-security/malicious-packages-using-invisible-unicode-found-in-151-github-repos-and-vs-code" class="read-btn"
+target="_blank"
+rel="noopener noreferrer"
+>Read More →</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+const searchInput = document.getElementById("searchDate");
+const categoryFilter = document.getElementById("categoryFilter");
+
+searchInput.addEventListener("input", filterNews);
+categoryFilter.addEventListener("change", filterNews);
+
+function filterNews() {
+
+    const dateValue = searchInput.value.toLowerCase();
+    const categoryValue = categoryFilter.value;
+
+    document.querySelectorAll(".archive-section").forEach(section => {
+
+        const sectionDate = section.dataset.date.toLowerCase();
+        let dateMatch = sectionDate.includes(dateValue);
+
+        let visibleCards = 0;
+
+        section.querySelectorAll(".news-card").forEach(card => {
+
+            const cardCategory = card.dataset.category;
+
+            let categoryMatch = !categoryValue || cardCategory === categoryValue;
+
+            if(categoryMatch){
+                card.style.display = "block";
+                visibleCards++;
+            }else{
+                card.style.display = "none";
+            }
+
+        });
+
+        if(dateMatch && visibleCards > 0){
+            section.style.display = "block";
+        }else{
+            section.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
